@@ -1,0 +1,392 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;500&display=swap');
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif; /* Default font for body */
+}
+
+/* Color Variables (Monochrome Theme) */
+:root {
+  --primary: #000000;
+  --secondary: #FFFFFF;
+  --accent: #555555;
+  --background: #F9F9F9;
+  --text: #222222;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: var(--primary);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  color: var(--secondary);
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif; /* Elegant heading font for logo */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 2rem;
+}
+
+nav ul li a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  color: #BBBBBB; /* Lighter gray on hover */
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-background.jpg');
+  background-size: cover;
+  color: var(--secondary);
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.btn {
+  padding: 0.8rem 2rem;
+  background: var(--accent);
+  color: var(--secondary);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+  border: none;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: #333333; /* Darker gray for hover */
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 5rem 5%;
+  text-align: center;
+  background: var(--background);
+}
+
+.gallery h2 {
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  color: var(--primary);
+}
+
+.artworks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.art-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.art-item img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* About Section */
+.about {
+  padding: 5rem 5%;
+  background: var(--secondary);
+}
+
+.about h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary);
+  text-align: center;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.about-content img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* Contact Section */
+.contact {
+  padding: 5rem 5%;
+  background: var(--background);
+}
+
+.contact h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary);
+}
+
+form {
+  max-width: 600px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea {
+  padding: 0.8rem;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  font-size: 1rem;
+  background: var(--secondary);
+  color: var(--text);
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.social-links {
+  margin-top: 2rem;
+}
+
+.social-links a {
+  margin: 0 0.5rem;
+  color: var(--primary);
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--accent);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--primary);
+  color: var(--secondary);
+}
+
+/* Lightbox Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: var(--secondary);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content img {
+    width: 200px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Lightbox Container */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Container for precise positioning */
+.lightbox-content {
+  position: relative;
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+/* Image Itself */
+.lightbox-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+/* Image Wrapper Constraints */
+.image-wrapper {
+  max-width: 80vw;
+  max-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modern Arrow Styling */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.prev-btn {
+  left: 20px;
+}
+
+.next-btn {
+  right: 20px;
+}
+
+.lightbox:hover .nav-btn {
+  opacity: 1;
+}
+
+/* Sleek SVG Arrows */
+.arrow-icon {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .nav-btn {
+    opacity: 1; /* Always visible on mobile */
+    width: 30px;
+    height: 30px;
+  }
+  .arrow-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+/* Hover effects */
+.lightbox-content:hover .nav-btn {
+  opacity: 1;
+  transition-delay: 0.5s; /* Delay appearance */
+}
+
+.nav-btn:hover {
+  background: rgba(30, 30, 30, 0.9);
+}
+
+/* Lightbox Text Styling */
+.lightbox-text {
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+/* Clickable Background */
+.lightbox {
+  cursor: pointer;
+}
+
+/* Prevent clicks on content from closing */
+.lightbox-content-container {
+  cursor: auto;
+  pointer-events: none;
+}
+
+.lightbox-content-container > * {
+  pointer-events: auto;
+}
+
+/* Tablet/Mobile adjustments */
+@media (max-width: 768px) {
+  .image-wrapper {
+    padding: 0 20px;
+  }
+}
+
